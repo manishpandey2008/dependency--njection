@@ -12,7 +12,7 @@ import spring.web.dependencyinjection.service.ConstructorInjectorService;
 import spring.web.dependencyinjection.service.PropertyInjectorService;
 
 @Configuration
-@ImportResource("classpath:bike.xml")
+@ImportResource({"classpath:bike.xml", "classpath:bean-scope.xml"})
 public class JavaBeanConfiguration {
     // In Spring we have option to create beans by the help of @Component , @Service, @Controller , @RestController, @Repository .... and @ComponentScan
 

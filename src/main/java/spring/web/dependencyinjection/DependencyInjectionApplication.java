@@ -4,6 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import spring.web.dependencyinjection.beanscope.ProtoTypeBeanScope;
+import spring.web.dependencyinjection.beanscope.ProtoTypeBeanScopeXml;
+import spring.web.dependencyinjection.beanscope.SingletonBean;
+import spring.web.dependencyinjection.beanscope.SingletonBeanXml;
 import spring.web.dependencyinjection.controller.*;
 import spring.web.dependencyinjection2.ComponentScannerTestController;
 
@@ -39,6 +43,42 @@ public class DependencyInjectionApplication {
 
 		XmlController xmlController= (XmlController) context.getBean("xmlController");
 		System.out.println(xmlController.getBikeName());
+
+
+		// Bean Scope
+
+		// ------------Singleton Bean ---------
+		SingletonBean singletonBean= (SingletonBean) context.getBean("singletonBean");
+		singletonBean.getName();
+
+		SingletonBean singletonBean2= (SingletonBean) context.getBean("singletonBean");
+		singletonBean2.getName();
+
+
+		// ------------Prototype Bean ---------
+		ProtoTypeBeanScope protoTypeBeanScope= (ProtoTypeBeanScope) context.getBean("protoTypeBeanScope");
+		protoTypeBeanScope.getName();
+
+		ProtoTypeBeanScope protoTypeBeanScope2= (ProtoTypeBeanScope) context.getBean("protoTypeBeanScope");
+		protoTypeBeanScope2.getName();
+
+
+		// ------------Singleton Bean XML ---------
+		SingletonBeanXml singletonBeanXml= (SingletonBeanXml) context.getBean("singletonBeanXml");
+		singletonBeanXml.getName();
+
+		SingletonBeanXml singletonBeanXml2= (SingletonBeanXml) context.getBean("singletonBeanXml");
+		singletonBeanXml2.getName();
+
+
+		// ------------Prototype Bean MXL---------
+		ProtoTypeBeanScopeXml protoTypeBeanScopeXml= (ProtoTypeBeanScopeXml) context.getBean("protoTypeBeanScopeXml");
+		protoTypeBeanScopeXml.getName();
+
+		ProtoTypeBeanScopeXml protoTypeBeanScopeXml2= (ProtoTypeBeanScopeXml) context.getBean("protoTypeBeanScopeXml");
+		protoTypeBeanScopeXml2.getName();
+
+
 	}
 
 }
