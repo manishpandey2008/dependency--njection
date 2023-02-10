@@ -2,6 +2,7 @@ package spring.web.dependencyinjection.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import spring.web.dependencyinjection.factory.Car;
 import spring.web.dependencyinjection.factory.FactoryTesting;
 import spring.web.dependencyinjection.factory.SuvCar;
@@ -11,6 +12,7 @@ import spring.web.dependencyinjection.service.ConstructorInjectorService;
 import spring.web.dependencyinjection.service.PropertyInjectorService;
 
 @Configuration
+@ImportResource("classpath:bike.xml")
 public class JavaBeanConfiguration {
     // In Spring we have option to create beans by the help of @Component , @Service, @Controller , @RestController, @Repository .... and @ComponentScan
 

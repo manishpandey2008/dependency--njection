@@ -1,5 +1,6 @@
 package spring.web.dependencyinjection.controller;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import spring.web.dependencyinjection.xml.Bike;
 
@@ -7,7 +8,7 @@ import spring.web.dependencyinjection.xml.Bike;
 public class XmlController {
     private final Bike bike;
 
-    public XmlController(Bike bike) {
+    public XmlController(@Qualifier("heroBike") Bike bike) {
         this.bike = bike;
     }
 
