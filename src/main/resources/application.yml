@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: prod
+
+di:
+  username: pandey234
+  password: password654
+  dbUrl: mongoDbUrl
+
+---
+# --- meaning is creating new file in yml file after ---
+spring:
+  profile: prod
+di:
+  username: pandey234Prod
+  password: password654Prod
+  dbUrl: mongoDbUrlProd

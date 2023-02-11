@@ -9,6 +9,7 @@ import spring.web.dependencyinjection.beanscope.ProtoTypeBeanScopeXml;
 import spring.web.dependencyinjection.beanscope.SingletonBean;
 import spring.web.dependencyinjection.beanscope.SingletonBeanXml;
 import spring.web.dependencyinjection.controller.*;
+import spring.web.dependencyinjection.datasource.DbDatasource;
 import spring.web.dependencyinjection2.ComponentScannerTestController;
 
 @SpringBootApplication
@@ -78,6 +79,9 @@ public class DependencyInjectionApplication {
 		ProtoTypeBeanScopeXml protoTypeBeanScopeXml2= (ProtoTypeBeanScopeXml) context.getBean("protoTypeBeanScopeXml");
 		protoTypeBeanScopeXml2.getName();
 
+		// datasource.properties data
+		DbDatasource datasource= (DbDatasource) context.getBean("dbDatasource");
+		System.out.println(datasource.getUsername()+" "+datasource.getPassword()+" "+datasource.getDbUrl());
 
 	}
 
